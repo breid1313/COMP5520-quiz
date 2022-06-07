@@ -14,7 +14,7 @@ except ValueError:
     raise RuntimeError("Input must be a base ten integer")
 
 
-def get_x(start: int, end: int, size: int):
+def get_x(start: int, end: int, size: int) -> List[int]:
     # generates a list of numbers in the range [start, end] inclusive equal to
     # the size parameter. note that elements in x need not be unique
     nums = []
@@ -23,7 +23,7 @@ def get_x(start: int, end: int, size: int):
     return nums
 
 
-def is_prime(num: int):
+def is_prime(num: int) -> bool:
     # returns True if a number is prime and False otherwise
     if num <= 1:
         return False
@@ -34,7 +34,7 @@ def is_prime(num: int):
     return True
 
 
-def get_y_from_x(x: List[int]):
+def get_y_from_x(x: List[int]) -> List[int]:
     # generates y by aggregating the prime numbers in x.
     # assumes that x is sorted ascending in order to satisfy the constraint
     # that if i < j then y_i < y_j
@@ -45,7 +45,7 @@ def get_y_from_x(x: List[int]):
     return y
 
 
-def get_z_from_y(y: List[int]):
+def get_z_from_y(y: List[int]) -> List[int]:
     # gets the indexes of y where the index is not a prime number.
     # per the problem, indexes start at 1, not zero
     y_indexes = [i for i in range(1, len(y) + 1)]
